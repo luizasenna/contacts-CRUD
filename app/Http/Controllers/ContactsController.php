@@ -40,6 +40,26 @@ class ContactsController extends Controller
 
       }
 
+      public function edit(int $id){
+        $contact = Contact::findOrFail($id);
+        return view('/contacts/edit', [
+          'contact' => $contact
+        ]);
+
+      }
+
+      public function update(Request $request){
+
+
+        $contact = Contact::findOrFail($request->id);
+
+        $contact->fill($request->all());
+        $contact->save();
+
+        return redirect()->intended('/home')->with('status', 'Contact updated sucesfully.');
+
+      }
+
 
 
 
