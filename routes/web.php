@@ -14,11 +14,11 @@ use App\Http\Controllers\ContactsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    return view('index');
+});*/
 
-  Route::get('/home', [ContactsController::class, 'home']);
+  Route::get('/', [ContactsController::class, 'home']);
   Route::group(['prefix' => 'contact'], function () {
       Route::get('/show/{id}', [ContactsController::class, 'show']);
       Route::get('/add', function () {
@@ -31,3 +31,11 @@ Route::get('/', function () {
       Route::post('/create', [ContactsController::class, 'create'])->name('createNew');
       Route::post('/update', [ContactsController::class, 'update'])->name('update');
   });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -20,7 +20,7 @@ class ContactsController extends Controller
       public function home()
       {
           $contacts = Contact::all();
-          return view('/home', [
+          return view('/index', [
             'contacts' => $contacts
           ]);
       }
