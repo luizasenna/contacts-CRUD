@@ -24,7 +24,10 @@ Route::get('/', function () {
       Route::get('/add', function () {
           return view('contacts/add');
       });
-      Route::post('/create', [ContactsController::class, 'create'])->name('createNew');
       Route::get('/edit/{id}', [ContactsController::class, 'edit']);
+      Route::get('/delete/{id}', [ContactsController::class, 'delete'])->name('delete');
+
+
+      Route::post('/create', [ContactsController::class, 'create'])->name('createNew');
       Route::post('/update', [ContactsController::class, 'update'])->name('update');
   });

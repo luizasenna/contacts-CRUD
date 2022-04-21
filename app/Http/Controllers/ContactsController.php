@@ -60,6 +60,13 @@ class ContactsController extends Controller
 
       }
 
+      public function delete(int $id){
+
+        Contact::findOrFail($id)->delete();
+        return redirect()->intended('/home')
+          ->with('status', 'Contact softly deleted sucesfully.');
+
+      }
 
 
 

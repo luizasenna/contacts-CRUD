@@ -40,7 +40,7 @@
                                   <div>
                                         <a href="/home" class="btn btn-outline-info" role="button" aria-pressed="true">Back</a>
                                         <a href="/contact/edit/{{$contact->id}}" class="btn btn-outline-secondary" role="button" aria-pressed="true">Edit</a>
-                                        <a href="#" class="btn btn-danger" role="button" aria-pressed="true">Delete</a>
+                                        <a href="/contact/delete/{{$contact->id}}" class="btn btn-danger" role="button" aria-pressed="true">Delete</a>
                                   </div>
 
                               </td>
