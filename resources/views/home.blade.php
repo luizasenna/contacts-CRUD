@@ -26,8 +26,6 @@
                           <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Contact</th>
-                            <th scope="col">Email</th>
                             <th scope="col">Actions</th>
                           </tr>
                         </thead>
@@ -36,8 +34,6 @@
                             <tr>
                               <th scope="row">{{$c->id}}</th>
                               <td>{{$c->name}}</td>
-                              <td>{{$c->contact}}</td>
-                              <td>{{$c->email}}</td>
                               <td>
 
                                   <div>

@@ -34,6 +34,15 @@ class ContactsController extends Controller
       }
 
       public function create(Request $request){
+
+        $this->validate($request, [
+             'name' => 'required|min:6',
+             'email' => 'required|email',
+             'contact' => 'required|numeric|digits:9'
+
+         ]);
+
+
         $new = Contact::create($request->all());
 		    return redirect()->intended('/home')->with('status', 'New contact created sucesfully.');
 

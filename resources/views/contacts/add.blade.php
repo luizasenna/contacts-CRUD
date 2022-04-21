@@ -25,6 +25,15 @@
                     	<div class="row">
                     		<div class="col-md-12">
 
+                              @if ($errors->any())
+                              <div class="alert alert-danger">
+                                  <ul>
+                                      @foreach ($errors->all() as $error)
+                                          <li>{{ $error }}</li>
+                                      @endforeach
+                                  </ul>
+                              </div>
+                              @endif
 
                     					<form class="form-horizontal" method="POST" action="{{ route('createNew') }}">
 
@@ -35,7 +44,8 @@
                                      <label for="name" class="col-form-label">Name</label>
                                     </div>
                                     <div class="col-sm-11">
-                                     <input type="text" name="name" class="form-control" aria-describedby="Name" required>
+                                     <input type="text" name="name" class="form-control"
+                                     aria-describedby="Name" required value="{{ old('name') ?? '' }}">
                                     </div>
                                 </div>
                                 <div class="row m-3 align-items-center">
@@ -43,7 +53,8 @@
                                      <label for="contact" class="col-form-label">Contact</label>
                                     </div>
                                     <div class="col-sm-11">
-                                     <input type="text" name="contact" class="form-control" aria-describedby="Contact" required>
+                                     <input type="text" name="contact" class="form-control"
+                                     aria-describedby="Contact" required value="{{ old('contact') ?? '' }}">
                                     </div>
                                 </div>
                                 <div class="row m-3 align-items-center">
@@ -51,7 +62,8 @@
                                      <label for="email" class="col-form-label">Email</label>
                                     </div>
                                     <div class="col-sm-11">
-                                     <input type="text" name="email" class="form-control" aria-describedby="Email" required>
+                                     <input type="text" name="email" class="form-control"
+                                     aria-describedby="Email" required value="{{ old('email') ?? '' }}">
                                     </div>
                                 </div>
                                 <div class="col-12">
