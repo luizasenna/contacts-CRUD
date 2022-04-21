@@ -31,11 +31,18 @@
                         <tbody>
                           @foreach($contacts as $c)
                             <tr>
-                              <th scope="row">1</th>
+                              <th scope="row">{{$c->id}}</th>
                               <td>{{$c->name}}</td>
                               <td>{{$c->contact}}</td>
                               <td>{{$c->email}}</td>
-                              <td>Actions</td>
+                              <td>
+
+                                  <div>
+                                        <a href="#" class="btn btn-outline-secondary" role="button" aria-pressed="true">Edit</a>
+                                        <a href="#" class="btn btn-danger " role="button" aria-pressed="true">Delete</a>
+                                  </div>
+
+                              </td>
                             </tr>
                           @endforeach
 
