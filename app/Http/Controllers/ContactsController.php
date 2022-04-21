@@ -37,8 +37,8 @@ class ContactsController extends Controller
 
         $this->validate($request, [
              'name' => 'required|min:6',
-             'email' => 'required|email',
-             'contact' => 'required|numeric|digits:9'
+             'email' => 'required|email|unique:contacts,email',
+             'contact' => 'required|numeric|digits:9|unique:contacts,contact'
 
          ]);
 
@@ -58,7 +58,12 @@ class ContactsController extends Controller
       }
 
       public function update(Request $request){
+        $this->validate($request, [
+             'name' => 'required|min:6',
+             'email' => 'required|email',
+             'contact' => 'required|numeric|digits:9'
 
+         ]);
 
         $contact = Contact::findOrFail($request->id);
 
