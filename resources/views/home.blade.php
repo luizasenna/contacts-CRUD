@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">{{ __('Contacts Dashboard') }}
 
-                   <a href="" class="btn btn-secondary" role="button" aria-pressed="true">Add new contact</a>
+                   <a href="/contact/add" class="btn btn-secondary" role="button" aria-pressed="true">Add new contact</a>
                 </div>
 
                 <div class="card-body">

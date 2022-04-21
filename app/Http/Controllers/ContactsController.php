@@ -33,6 +33,13 @@ class ContactsController extends Controller
           ]);
       }
 
+      public function create(Request $request){
+        $new = Contact::create($request->all());
+		    return redirect()->intended('/home')->with('status', 'New contact created sucesfully.');
+
+
+      }
+
 
 
 
