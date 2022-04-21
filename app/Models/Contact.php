@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Mapa extends Model
+class Contact extends Model
 {
     use HasFactory, Notifiable;
 
@@ -17,13 +17,12 @@ class Mapa extends Model
      *
      * @var array
      */
+
+    public $timestamps = true; 
     protected $fillable = [
-        'sgLinha',
-        'codigoLinha',
-        'getOrigemIda',
-        'destinoIda',
-        'nomeLinha',
-        'mapa'
+        'name',
+        'contact',
+        'email',
     ];
 
 

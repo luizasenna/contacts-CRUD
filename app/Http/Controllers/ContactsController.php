@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\User;
+use App\Models\User;
+use App\Models\Contact;
 use Illuminate\Support\Facades\DB;
 
 
@@ -18,7 +19,10 @@ class ContactsController extends Controller
 
       public function home()
       {
-          return view('/home');
+          $contacts = Contact::all();
+          return view('/home', [
+            'contacts' => $contacts
+          ]);
       }
 
 

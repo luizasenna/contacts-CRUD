@@ -29,13 +29,15 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Actions</td>
-                          </tr>
+                          @foreach($contacts as $c)
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>{{$c->name}}</td>
+                              <td>{{$c->contact}}</td>
+                              <td>{{$c->email}}</td>
+                              <td>Actions</td>
+                            </tr>
+                          @endforeach
 
 
                         </tbody>
