@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header bg-info text-white">{{ __('Contacts Dashboard') }}</div>
+                <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">{{ __('Contacts Dashboard') }}
+
+                   <a href="" class="btn btn-secondary" role="button" aria-pressed="true">Add new contact</a>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +17,7 @@
                         </div>
                     @endif
 
-                    Hello there,  <b></b>
+                    Hello there, Guest. <b></b>
 
                     <div class="m-3">
 
@@ -38,7 +41,8 @@
                               <td>
 
                                   <div>
-                                        <a href="#" class="btn btn-outline-secondary" role="button" aria-pressed="true">Edit</a>
+                                        <a href="/contact/show/{{$c->id}}" class="btn btn-outline-info" role="button" aria-pressed="true">Show</a>
+                                        <a href="/contact/edit/{{$c->id}}" class="btn btn-outline-secondary" role="button" aria-pressed="true">Edit</a>
                                         <a href="#" class="btn btn-danger " role="button" aria-pressed="true">Delete</a>
                                   </div>
 

@@ -25,6 +25,14 @@ class ContactsController extends Controller
           ]);
       }
 
+      public function show(int $id){
+
+          $contact = Contact::find($id);
+          return view('/contacts/index', [
+            'contact' => $contact
+          ]);
+      }
+
 
 
 

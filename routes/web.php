@@ -18,4 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
- Route::get('/home', [ContactsController::class, 'home']);
+  Route::get('/home', [ContactsController::class, 'home']);
+  Route::group(['prefix' => 'contact'], function () {
+      Route::get('/show/{id}', [ContactsController::class, 'show']);
+      Route::get('/add', function () {
+          return view('contacts/add');
+      });
+  });
